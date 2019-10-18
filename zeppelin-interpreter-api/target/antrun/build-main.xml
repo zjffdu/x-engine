@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <echo>ANT TASK - copying files....</echo>
+  <copy flatten="true" todir="/Users/jzhang/github/zeppelin/zeppelin-interpreter-api/../interpreter" overwrite="true">
+    <fileset includes="zeppelin-interpreter-api-*.jar" dir="/Users/jzhang/github/zeppelin/zeppelin-interpreter-api/target"></fileset>
+  </copy>
+</target>
+</project>

@@ -1,0 +1,159 @@
+// ------------------------------------------------------------------
+// NOTICE file corresponding to the section 4d of The Apache License,                                                                                               
+// Version 2.0, in this case for Zeppelin: Interpreter API                                                                                  
+// ------------------------------------------------------------------
+
+Zeppelin: Interpreter API
+Copyright 2013-2019 The Apache Software Foundation
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+This product includes software, Kryo, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, MinLog, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, ReflectASM, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, FindBugs-jsr305, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Gson, developed by                                                                                                   
+Google, Inc. (http://www.google.com).
+This product includes software, error-prone annotations, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Guava: Google Core Libraries for Java, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, J2ObjC Annotations, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, config, developed by                                                                                                   
+com.typesafe ($project.organization.url).
+This product includes software, Commons Codec, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Commons Configuration, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, HttpClient, developed by                                                                                                   
+Apache Software Foundation (http://jakarta.apache.org/).
+This product includes software, Commons IO, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Commons Lang, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Commons Logging, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Atomix, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Atomix Cluster, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Atomix Protocols :: Primary Backup Protocol, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Atomix Primitive API, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Atomix Protocols :: Raft, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Atomix Storage, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Atomix Utilities, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, FastClasspathScanner, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Netty/Buffer, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, Netty/Codec, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, Netty/Common, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, Netty/Handler, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, Netty/Resolver, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, Netty/Transport, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, Netty/Transport/Native/Epoll, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, Netty/Transport/Native/Unix/Common, developed by                                                                                                   
+The Netty Project (http://netty.io/).
+This product includes software, JLine, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Apache Log4j, developed by                                                                                                   
+Apache Software Foundation (http://www.apache.org).
+This product includes software, Apache Commons Exec, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache Commons Lang, developed by                                                                                                   
+The Apache Software Foundation (https://www.apache.org/).
+This product includes software, Commons Math, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache Commons Pool, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache HttpClient, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache HttpCore, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Maven Aether Provider, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Maven Artifact, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Maven Model, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Maven Model Builder, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Maven Plugin API, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Maven Repository Metadata Model, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache Maven Wagon :: Providers :: HTTP Provider, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache Maven Wagon :: Providers :: Lightweight HTTP Provider, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache Maven Wagon :: Providers :: HTTP Shared Library, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache Maven Wagon :: API, developed by                                                                                                   
+The Apache Software Foundation (http://www.apache.org/).
+This product includes software, Apache Thrift, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Zeppelin: Interpreter, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Bouncy Castle PKIX, CMS, EAC, TSP, PKCS, OCSP, CMP, and CRMF APIs, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Bouncy Castle Provider, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Animal Sniffer Annotations, developed by                                                                                                   
+Codehaus (http://codehaus.org).
+This product includes software, Plexus Classworlds, developed by                                                                                                   
+Codehaus (http://www.codehaus.org/).
+This product includes software, Plexus :: Component Annotations, developed by                                                                                                   
+Codehaus (http://www.codehaus.org/).
+This product includes software, Plexus Interpolation API, developed by                                                                                                   
+Codehaus (http://www.codehaus.org/).
+This product includes software, Plexus Common Utilities, developed by                                                                                                   
+Codehaus (http://www.codehaus.org/).
+This product includes software, gson-extras, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, Hamcrest All, developed by                                                                                                   
+$project.organization.name ($project.organization.url).
+This product includes software, jsoup, developed by                                                                                                   
+Jonathan Hedley (http://jonathanhedley.com/).
+This product includes software, Objenesis, developed by                                                                                                   
+Joe Walnes, Henri Tremblay, Leonardo Mesquita ($project.organization.url).
+This product includes software, ASM Core, developed by                                                                                                   
+ObjectWeb (http://www.objectweb.org/).
+This product includes software, SLF4J API Module, developed by                                                                                                   
+QOS.ch (http://www.qos.ch).
+This product includes software, SLF4J LOG4J-12 Binding, developed by                                                                                                   
+QOS.ch (http://www.qos.ch).
+This product includes software, Aether :: API, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com/).
+This product includes software, Aether :: Connector :: File, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com/).
+This product includes software, Aether :: Connector :: Wagon, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com/).
+This product includes software, Aether :: Implementation, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com/).
+This product includes software, Aether :: SPI, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com/).
+This product includes software, Aether :: Utilities, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com/).
+This product includes software, Google Guice - Core Library, developed by                                                                                                   
+Google, Inc. (http://www.google.com).
+This product includes software, Sisu-Inject-Bean : Aggregate OSGi bundle, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com).
+This product includes software, Sisu-Inject-Plexus : Aggregate OSGi bundle, developed by                                                                                                   
+Sonatype, Inc. (http://www.sonatype.com).
