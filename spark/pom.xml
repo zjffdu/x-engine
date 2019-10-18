@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one or more
+  ~ contributor license agreements.  See the NOTICE file distributed with
+  ~ this work for additional information regarding copyright ownership.
+  ~ The ASF licenses this file to You under the Apache License, Version 2.0
+  ~ (the "License"); you may not use this file except in compliance with
+  ~ the License.  You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>xengine-interpreter-parent</artifactId>
+        <groupId>org.apache.zeppelin</groupId>
+        <version>0.9.0-SNAPSHOT</version>
+        <relativePath>../xengine-interpreter-parent/pom.xml</relativePath>
+    </parent>
+
+    <groupId>org.apache.zeppelin</groupId>
+    <artifactId>spark-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.9.0-SNAPSHOT</version>
+    <name>XEngine: Spark Parent</name>
+    <description>XEngine Spark Support</description>
+
+    <properties>
+        <!--library versions-->
+        <datanucleus.rdbms.version>3.2.9</datanucleus.rdbms.version>
+        <datanucleus.apijdo.version>3.2.6</datanucleus.apijdo.version>
+        <datanucleus.core.version>3.2.10</datanucleus.core.version>
+
+        <!--plugin versions-->
+        <plugin.scala.version>2.15.2</plugin.scala.version>
+        <!-- spark versions -->
+        <spark.version>2.2.3</spark.version>
+        <spark.scala.version>2.11.12</spark.scala.version>
+        <spark.scala.binary.version>2.11</spark.scala.binary.version>
+        <py4j.version>0.10.7</py4j.version>
+
+        <spark.archive>spark-${spark.version}</spark.archive>
+        <spark.src.download.url>
+            https://archive.apache.org/dist/spark/${spark.archive}/${spark.archive}.tgz
+        </spark.src.download.url>
+        <spark.bin.download.url>
+            https://archive.apache.org/dist/spark/${spark.archive}/${spark.archive}-bin-without-hadoop.tgz
+        </spark.bin.download.url>
+    </properties>
+
+    <modules>
+        <module>interpreter</module>
+        <module>spark-scala-parent</module>
+        <module>scala-2.10</module>
+        <module>scala-2.11</module>
+        <module>scala-2.12</module>
+        <module>spark-dependencies</module>
+        <module>spark-shims</module>
+        <module>spark1-shims</module>
+        <module>spark2-shims</module>
+    </modules>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${plugin.clean.version}</version>
+                <configuration combine.self="override"></configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.2</version>
+                <executions>
+                    <execution>
+                        <id>eclipse-add-source</id>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile-first</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scalaVersion>${scala.compile.version}</scalaVersion>
+                    <args>
+                        <arg>-unchecked</arg>
+                        <arg>-deprecation</arg>
+                        <arg>-feature</arg>
+                    </args>
+                    <jvmArgs>
+                        <jvmArg>-Xms1024m</jvmArg>
+                        <jvmArg>-Xmx1024m</jvmArg>
+                        <jvmArg>-XX:PermSize=${PermGen}</jvmArg>
+                        <jvmArg>-XX:MaxPermSize=${MaxPermGen}</jvmArg>
+                    </jvmArgs>
+                    <javacArgs>
+                        <javacArg>-source</javacArg>
+                        <javacArg>${java.version}</javacArg>
+                        <javacArg>-target</javacArg>
+                        <javacArg>${java.version}</javacArg>
+                        <javacArg>-Xlint:all,-serial,-path,-options</javacArg>
+                    </javacArgs>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <profiles>
+
+        <!-- profile spark-scala-x only affect the unit test in spark/interpreter module -->
+
+        <profile>
+            <id>spark-scala-2.12</id>
+            <properties>
+                <spark.scala.version>2.12.7</spark.scala.version>
+                <spark.scala.binary.version>2.12</spark.scala.binary.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>spark-scala-2.11</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spark.scala.version>2.11.12</spark.scala.version>
+                <spark.scala.binary.version>2.11</spark.scala.binary.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>spark-scala-2.10</id>
+            <properties>
+                <spark.scala.version>2.10.5</spark.scala.version>
+                <spark.scala.binary.version>2.10</spark.scala.binary.version>
+            </properties>
+        </profile>
+
+        <!-- profile spark-x only affect the embedded spark version in zeppelin distribution -->
+        <profile>
+            <id>spark-2.4</id>
+            <properties>
+                <spark.version>2.4.3</spark.version>
+                <protobuf.version>2.5.0</protobuf.version>
+                <py4j.version>0.10.7</py4j.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>spark-2.3</id>
+            <properties>
+                <spark.version>2.3.3</spark.version>
+                <protobuf.version>2.5.0</protobuf.version>
+                <py4j.version>0.10.7</py4j.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>spark-2.2</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spark.version>2.2.3</spark.version>
+                <py4j.version>0.10.7</py4j.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>spark-2.1</id>
+            <properties>
+                <spark.version>2.1.2</spark.version>
+                <py4j.version>0.10.4</py4j.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>spark-2.0</id>
+            <properties>
+                <spark.version>2.0.2</spark.version>
+                <py4j.version>0.10.3</py4j.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>spark-1.6</id>
+            <properties>
+                <spark.version>1.6.3</spark.version>
+                <py4j.version>0.9</py4j.version>
+            </properties>
+        </profile>
+    </profiles>
+</project>
